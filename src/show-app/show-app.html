@@ -161,6 +161,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       properties: {
 
+      },
+
+      listeners: {
+        'setup-toolbar': '_setupToolbar'
+      },
+
+      _setupToolbar: function(e) {
+        this.$.leftItem.onclick = e.detail.leftItemClickAction;
+        if (e.detail.leftItemIcon) {
+          this.$.leftItem.setAttribute('icon', e.detail.leftItemIcon);
+        } else {
+          this.$.leftItem.removeAttribute('icon');
+        }
       }
 
     });
