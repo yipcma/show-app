@@ -140,6 +140,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-toolbar>
     </app-header>
 
+    <iron-pages id="pages"
+      role="main"
+      selected="[[routeData.page]]"
+      selected-attribute="active"
+      attr-for-selected="name"
+      fallback-selection="show">
+      <show-list-page name="show"
+        subroute="[[subroute]]"></show-list-page>
+      <show-list-page name="video"
+        subroute="[[subroute]]"></show-list-page>
+    </iron-pages>
+
   </template>
 
   <script>
